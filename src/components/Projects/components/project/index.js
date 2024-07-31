@@ -1,13 +1,13 @@
-'use client'
+'use client';
 import React from 'react'
-import styles from "./style.module.css";
+import styles from './style.module.scss';
 
-export default function index({ index, title, setModal }) {
+export default function index({index, title, manageModal}) {
+
     return (
-        <div className={styles.project} onMouseEnter={() => setModal({ active: true, index: index })} onMouseLeave={()=> setModal({active: false, index: index})}>
+        <div onMouseEnter={(e) => {manageModal(true, index, e.clientX, e.clientY)}} onMouseLeave={(e) => {manageModal(false, index, e.clientX, e.clientY)}} className={styles.project}>
             <h2>{title}</h2>
-            <p>Development-Projects</p>
-
+            <p>Design & Development</p>
         </div>
     )
 }

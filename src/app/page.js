@@ -1,14 +1,12 @@
-import styles from "./page.module.css";
-
 // Components
-import Header from "@/components/Header/page";
 import Project from "@/components/Projects";
+import Landing from "@/components/Landing/page";
 
 export default function Home() {
 
   return (
-    <main className={styles.main}>
-      {/* <Header /> */}
+    <main>
+      <Landing />
       <Project />
     </main>
   );
