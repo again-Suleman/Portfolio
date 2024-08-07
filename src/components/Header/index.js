@@ -12,7 +12,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // Components
 import Rounded from '../../common/RoundedButton';
 import Magnetic from '../../common/Magnetic';
-// import Nav from './nav';
+import Nav from './nav/index';
+
+
 
 export default function index() {
     const header = useRef(null);
@@ -68,11 +70,14 @@ export default function index() {
                     </Magnetic>
                 </div>
             </div>
+
             <div ref={button} className={styles.headerButtonContainer}>
                 <Rounded onClick={() => { setIsActive(!isActive) }} className={`${styles.button}`}>
                     <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
                 </Rounded>
             </div>
+
+
             <AnimatePresence mode="wait">
                 {isActive && <Nav />}
             </AnimatePresence>

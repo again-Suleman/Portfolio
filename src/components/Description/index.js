@@ -8,11 +8,9 @@ import { slideUp, opacity } from './animation';
 import Rounded from '../../common/RoundedButton/index';
 
 
-
-
 export default function index() {
     const description = useRef(null);
-    const phrase = "Bringing your complex visions to life, because I guess solving problems is more fun than a day off :) Ready to dive into some code—or chaos?"
+    const phrase = "Hi! Good to see you, my name is Suleman and I love shaping my vision into reality using few lines of code ;)"
 
     // Checking when the container comes in view lool
     const isInView = useInView(description)
@@ -30,7 +28,7 @@ export default function index() {
                 </p>
                 <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>Began with a laptop and a cup of tea, now aiming for heights only I can see.</motion.p>
                 <div data-scroll data-scroll-speed={0.1} >
-                    <Rounded className={styles.button} >
+                    <Rounded backgroundColor='black' className={styles.button} >
                         <p>About me</p>
                     </Rounded>
                 </div>

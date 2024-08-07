@@ -89,6 +89,9 @@
         }
     } 
 }
+
+
+
 .headerButtonContainer{
     transform: scale(0);
     position: fixed;
@@ -115,7 +118,7 @@
         &::after, &::before{
             content: "";
             display: block;
-            height: 1px;
+            height: 2px;
             width: 40%;
             margin: auto;
             background-color: white;

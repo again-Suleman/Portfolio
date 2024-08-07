@@ -3,8 +3,8 @@ import { useEffect, useRef } from 'react';
 import styles from './style.module.scss';
 import gsap from 'gsap';
 import Magnetic from '../Magnetic';
-
-export default function index({children, backgroundColor="#455CE9", ...attributes}) {
+// 455CE9
+export default function index({children, backgroundColor="black", ...attributes}) {
 
   const circle = useRef(null);
   let timeline = useRef(null);

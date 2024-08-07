@@ -12,23 +12,22 @@ export const projects = [
   {
     title: "Aristo.ai",
     src: "aristo.png",
-    color: "#000000"
+    color: "#000000",
+    link: "https://aristo-ai.vercel.app/"
   },
   {
     title: "Tracking.me",
     src: "tracking.png",
-    color: "#00a1b3"
+    color: "#00a1b3",
+    link: "https://dev.tracking.me/"
   },
   {
     title: "Gorex.ai",
     src: "gorex.png",
-    color: "#EFE8D3"
+    color: "#EFE8D3",
+    link: "https://gorex.ai/"
   },
-  {
-    title: "Silencio",
-    src: "silencio.png",
-    color: "#706D63"
-  }
+
 ]
 
 
@@ -95,19 +94,21 @@ export default function Home() {
 
 
     <main onMouseMove={(e) => { moveItems(e.clientX, e.clientY) }} className={styles.projects}>
+      <h2 className='gradient-text'>Projects</h2>
 
 
       <div className={styles.body}>
         {
           projects.map((project, index) => {
-            return <Project index={index} title={project.title} manageModal={manageModal} key={index} />
+            return (
+              <Project index={index} title={project.title} manageModal={manageModal} link={project.link} key={index} />
+            )
           })
         }
       </div>
-      <Rounded>
+      {/* <Rounded>
         <p>More work</p>
-      </Rounded>
-
+      </Rounded> */}
 
       <>
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
