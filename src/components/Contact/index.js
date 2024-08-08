@@ -61,7 +61,7 @@ export default function Contact() {
 
 
                 <div className={styles.info}>
-                    <h3>socials</h3>
+                    {/* <h3>socials</h3> */}
                     <div>
 
                         <Magnetic>

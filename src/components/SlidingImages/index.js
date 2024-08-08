@@ -19,17 +19,25 @@ const slider1 = [
     {
         color: "#0C0C0C", 
         src: "node.png"
+    },
+    {
+        color: "#fff",
+        src: "express.png"
     }
 ]
 
 const slider2 = [
     {
-        color: "#EFEFEF",
-        src: "zustand.png"
+        color: "#FFFFFF", 
+        src: "sass.png"
     },
     {
         color: "#0C0C0C", 
         src: "rtk.png"
+    },
+    {
+        color: "#EFEFEF",
+        src: "zustand.png"
     },
     {
         color: "#303F9F",
@@ -45,6 +53,10 @@ const slider3 = [
     {
         color: "#FFFFFF", 
         src: "openai.png"
+    },
+    {
+        color: "#EFEFEF",
+        src: "mui.png"
     },
     {
         color: "#2C2F33",
@@ -71,9 +83,9 @@ export default function index() {
     // const x1 = useTransform(scrollYProgress, [0, 1], [-150, 300])
     // const x2 = useTransform(scrollYProgress, [0, 1], [250, -350])
     // const x3 = useTransform(scrollYProgress, [0, 1], [-400, 400])
-    const x1 = useTransform(scrollYProgress, [0, 1], [100, 1100])
-    const x2 = useTransform(scrollYProgress, [0, 1], [800, -350])
-    const x3 = useTransform(scrollYProgress, [0, 1], [-600, 600])
+    const x1 = useTransform(scrollYProgress, [0, 1], [-300, 800])
+    const x2 = useTransform(scrollYProgress, [0, 1], [700, -500])
+    const x3 = useTransform(scrollYProgress, [0, 1], [-1000, 500])
     const height = useTransform(scrollYProgress, [0, 0.9], [50, 0])
 
     return ( 

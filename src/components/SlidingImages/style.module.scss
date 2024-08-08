@@ -1,7 +1,7 @@
 .slidingImages{
     display: flex;
     flex-direction: column;
-    gap: 3vw;
+    gap: 4vw;
     position: relative;
     margin-top: 200px;
     background-color: white;
@@ -19,19 +19,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 30%;
+            border-radius: 50%;
             .imageContainer{
                 position: relative;
-                width: 80%;
-                height: 80%;
+                width: 75%;
+                height: 75%;
                 img{
-                    object-fit: cover;
+                    object-fit: contain;
                 }
             }
         }
     }
+
     .circleContainer{
-        background-color: red;
+        background-color: white;
         position: relative;
         margin-top: 100px;
         .circle{
