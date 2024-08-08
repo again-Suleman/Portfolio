@@ -1,3 +1,4 @@
+'use client'
 import { useRef } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import styles from './style.module.scss';
@@ -72,7 +73,7 @@ const slider3 = [
     }
 ]
 
-export default function index() {
+export default function Sliding() {
 
     const container = useRef(null);
     const { scrollYProgress } = useScroll({

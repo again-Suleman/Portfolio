@@ -10,6 +10,7 @@ import { useScroll, motion, useTransform } from 'framer-motion';
 
 export default function Contact() {
     const container = useRef(null);
+    const message = "Let's Connect";
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ["start end", "end end"]
@@ -30,7 +31,7 @@ export default function Contact() {
                                 src={`/images/avatar.png`}
                             />
                         </div>
-                        <h2>Let's connect</h2>
+                        <h2>{message}</h2>
                     </span>
                     <h2>& work</h2>
                     <motion.div style={{ x }} className={styles.buttonContainer}>

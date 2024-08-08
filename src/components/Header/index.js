@@ -16,7 +16,7 @@ import Nav from './nav/index';
 
 
 
-export default function index() {
+export default function Header() {
     const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();

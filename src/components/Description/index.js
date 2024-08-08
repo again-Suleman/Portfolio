@@ -8,7 +8,7 @@ import { slideUp, opacity } from './animation';
 import Rounded from '../../common/RoundedButton/index';
 
 
-export default function index() {
+export default function Description() {
     const description = useRef(null);
     const phrase = "Hi! Good to see you, my name is Suleman and I love shaping my vision into reality using few lines of code ;)"
 

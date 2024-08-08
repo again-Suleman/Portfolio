@@ -4,7 +4,7 @@ import styles from './style.module.scss';
 import gsap from 'gsap';
 import Magnetic from '../Magnetic';
 // 455CE9
-export default function index({children, backgroundColor="black", ...attributes}) {
+export default function RoundedButton({children, backgroundColor="black", ...attributes}) {
 
   const circle = useRef(null);
   let timeline = useRef(null);
