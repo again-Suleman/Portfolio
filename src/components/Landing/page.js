@@ -52,7 +52,7 @@ export default function Header() {
   }, []);
 
   return (
-    <motion.main variants={slideUp} initial="initial" animate="enter" className={styles.main}>
+    <motion.main id="homeSection" variants={slideUp} initial="initial" animate="enter" className={styles.main}>
       <Image 
         fill={true}
         src='/images/me.png'

@@ -96,17 +96,17 @@
 
             @keyframes gradientAnimation {
                 0% {
-                  background-position: 0% 50%;
+                    background-position: 0% 50%;
                 }
-              
+
                 50% {
-                  background-position: 100% 50%;
+                    background-position: 100% 50%;
                 }
-              
+
                 100% {
-                  background-position: 0% 50%;
+                    background-position: 0% 50%;
                 }
-              }
+            }
 
             a {
                 text-decoration: none;
@@ -131,92 +131,7 @@
             }
         }
 
-        .info {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 190px;
-            margin-bottom: 20px;
-            padding: 10px 60px;
-
-            h3 {
-                color: grey;
-                cursor: default;
-                font-weight: 300;
-                font-size: 1em;
-                text-align: end;
-                margin-bottom: 1.5rem;
-            }
-
-            div {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                justify-content: flex-end;
-                gap: 2rem;
-
-                .icon {
-                    transition: transform 0.3s ease, letter-spacing 0.3s ease;
-                    width: 24px;
-                    height: 24px;
-                    margin-right: 8px;
-                }
-
-                a {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: row;
-                    text-decoration: none;
-                    color: white;
-                    transition: letter-spacing 0.3s ease, color 0.3s ease;
-
-                    &:hover {
-                        color: rgb(255, 255, 255);
-                        letter-spacing: 2px;
-                    }
-
-                    &:hover .icon {
-                        transform: scale(1.1);
-                    }
-                }
-
-                p {
-                    margin: 0px;
-                    padding: 2.5px;
-                    cursor: pointer;
-                }
-
-                p {
-                    &::after {
-                        content: "";
-                        width: 0%;
-                        height: 1px;
-                        background-color: white;
-                        display: block;
-                        margin-top: 2px;
-                        position: relative;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        transition: width 0.2s linear;
-                    }
-
-                    &:hover {
-                        &::after {
-                            width: 100%;
-                        }
-                    }
-                }
-
-                span {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 15px;
-                }
-            }
-
-        }
+        
     }
 
 }

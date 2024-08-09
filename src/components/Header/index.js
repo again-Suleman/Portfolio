@@ -1,6 +1,7 @@
 'use client';
 import React from 'react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Link, animateScroll as scroll } from 'react-scroll';
 import styles from './style.module.scss';
 import { usePathname } from 'next/navigation';
 
@@ -16,7 +17,7 @@ import Nav from './nav/index';
 
 
 
-export default function Header() {
+export default function Header({ scrollToProject, scrollToDescription, scrollToContact }) {
     const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();
@@ -51,20 +52,26 @@ export default function Header() {
                 </div>
                 <div className={styles.nav}>
                     <Magnetic>
-                        <div className={styles.el}>
-                            <a>Work</a>
+                        <div className={styles.el} onClick={scrollToDescription}>
+                            <Link to="descriptionSection" smooth={true} duration={900} offset={-200}>
+                                About
+                            </Link>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
-                        <div className={styles.el}>
-                            <a>About</a>
+                        <div className={styles.el} onClick={scrollToProject}>
+                            <Link to="projectSection" smooth={true} duration={900}>
+                                Work
+                            </Link>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
-                        <div className={styles.el}>
-                            <a>Contact</a>
+                        <div className={styles.el} onClick={scrollToContact}>
+                            <Link to="contactSection" smooth={true} duration={900} offset={500}>
+                                Contact
+                            </Link>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>

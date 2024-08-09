@@ -1,49 +1,82 @@
-.slidingImages{
+.slidingImages {
     display: flex;
     flex-direction: column;
     gap: 4vw;
     position: relative;
-    margin-top: 200px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     background-color: white;
     z-index: 2;
-    overflow: hidden;
-    .slider{
+    // overflow: hidden;
+
+
+    .slider {
         display: flex;
         position: relative;
+        flex-direction: row;
         gap: 3vw;
         width: 120vw;
         left: -10vw;
-        .project{
-            width: 20vw;
+
+        .project {
+            width: 18vw;
             height: 20vw;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            .imageContainer{
+            flex-direction: column;
+            gap: 3vw;
+            border-radius: 2rem;
+            position: relative;
+            border: 1px solid black;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                background-color: rgb(0, 0, 0);
+                color: white;
+                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+            }
+
+            &:hover .imageContainer {
+                filter: drop-shadow(0px 0px 30px rgb(255, 255, 255));
+            }
+
+            .imageContainer {
                 position: relative;
-                width: 75%;
-                height: 75%;
-                img{
+                width: 60%;
+                height: 60%;
+
+                img {
                     object-fit: contain;
+
                 }
+            }
+
+            .title {
+                text-align: center;
+                width: 100%;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: inherit;
             }
         }
     }
 
-    .circleContainer{
+    .circleContainer {
         background-color: white;
         position: relative;
-        margin-top: 100px;
-        .circle{
-            height: 1550%;
+        margin-top: 130px;
+
+        .circle {
+            height: 1000%;
             width: 120%;
             left: -10%;
             border-radius: 0 0 50% 50%;
             background-color: white;
             z-index: 1;
             position: absolute;
-            box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+            // box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
         }
     }
 }

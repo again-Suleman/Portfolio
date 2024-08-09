@@ -6,70 +6,85 @@ import Image from 'next/image';
 
 const slider1 = [
     {
-        color: "#2C3E50", 
-        src: "js.png"
+        color: "#2C3E50",
+        src: "js.png",
+        title: "JavaScript"
     },
     {
-        color: "#282C34", 
-        src: "react.png"
+        color: "#282C34",
+        src: "react.png",
+        title: "React"
     },
     {
-        color: "#FFFFFF", 
-        src: "next.png"
+        color: "#FFFFFF",
+        src: "next.png",
+        title: "Next.js"
     },
     {
-        color: "#0C0C0C", 
-        src: "node.png"
+        color: "#0C0C0C",
+        src: "node.png",
+        title: "Node.js"
     },
     {
         color: "#fff",
-        src: "express.png"
+        src: "express.png",
+        title: "Express"
     }
 ]
 
 const slider2 = [
     {
-        color: "#FFFFFF", 
-        src: "sass.png"
+        color: "#FFFFFF",
+        src: "sass.png",
+        title: "SASS"
     },
     {
-        color: "#0C0C0C", 
-        src: "rtk.png"
+        color: "#0C0C0C",
+        src: "rtk.png",
+        title: "Redux Toolkit"
     },
     {
         color: "#EFEFEF",
-        src: "zustand.png"
+        src: "zustand.png",
+        title: "Zustand"
     },
     {
         color: "#303F9F",
-        src: "firebase.png"
+        src: "firebase.png",
+        title: "Firebase"
     },
     {
-        color: "#F4F4F9", 
-        src: "mysql.png"
+        color: "#F4F4F9",
+        src: "mysql.png",
+        title: "MySQL"
     }
 ]
 
 const slider3 = [
     {
-        color: "#FFFFFF", 
-        src: "openai.png"
+        color: "#FFFFFF",
+        src: "openai.png",
+        title: "OpenAI"
     },
     {
         color: "#EFEFEF",
-        src: "mui.png"
+        src: "mui.png",
+        title: "MUI"
     },
     {
         color: "#2C2F33",
-        src: "mongo.png"
+        src: "mongo.png",
+        title: "MongoDB"
     },
     {
-        color: "#FFFFFF", 
-        src: "git.png"
+        color: "#FFFFFF",
+        src: "git.png",
+        title: "Git"
     },
     {
-        color: "#212121", 
-        src: "postman.png"
+        color: "#212121",
+        src: "postman.png",
+        title: "Postman"
     }
 ]
 
@@ -81,43 +96,55 @@ export default function Sliding() {
         offset: ["start end", "end start"]
     })
 
-    // const x1 = useTransform(scrollYProgress, [0, 1], [-150, 300])
-    // const x2 = useTransform(scrollYProgress, [0, 1], [250, -350])
-    // const x3 = useTransform(scrollYProgress, [0, 1], [-400, 400])
-    const x1 = useTransform(scrollYProgress, [0, 1], [-300, 800])
-    const x2 = useTransform(scrollYProgress, [0, 1], [700, -500])
-    const x3 = useTransform(scrollYProgress, [0, 1], [-1000, 500])
+    const x1 = useTransform(scrollYProgress, [0, 1], [-100, 700])
+    const x2 = useTransform(scrollYProgress, [0, 1], [600, -300])
+    const x3 = useTransform(scrollYProgress, [0, 1], [-600, 500])
     const height = useTransform(scrollYProgress, [0, 0.9], [50, 0])
 
-    return ( 
+    return (
         <div ref={container} className={styles.slidingImages}>
             <motion.div style={{ x: x1 }} className={styles.slider}>
                 {
                     slider1.map((project, index) => {
-                        return <div key={index} className={styles.project} style={{ backgroundColor: project.color }} >
-                            <div className={styles.imageContainer}>
-                                <Image
-                                    fill={true}
-                                    objectFit='contain'
-                                    alt={"image"}
-                                    src={`/logos/${project.src}`} />
+                        return (
+                            <div key={index} className={styles.project} style={{}}>
+                                <div className={styles.imageContainer}>
+                                    <Image
+                                        fill={true}
+                                        sizes="(max-width: 768px) 100vw, 
+                                            (max-width: 1200px) 50vw, 
+                                            33vw"
+                                        objectFit='contain'
+                                        alt={project.title}
+                                        src={`/logos/${project.src}`}
+                                    />
+                                </div>
+                                <div className={styles.title}>{project.title}</div>
                             </div>
-                        </div>
+                        );
                     })
                 }
             </motion.div>
+
             <motion.div style={{ x: x2 }} className={styles.slider}>
                 {
                     slider2.map((project, index) => {
-                        return <div key={index} className={styles.project} style={{ backgroundColor: project.color }} >
-                            <div key={index} className={styles.imageContainer}>
-                                <Image
-                                    fill={true}
-                                    objectFit='contain'
-                                    alt={"image"}
-                                    src={`/logos/${project.src}`} />
+                        return (
+                            <div key={index} className={styles.project} style={{ }}>
+                                <div className={styles.imageContainer}>
+                                    <Image
+                                        fill={true}
+                                        sizes="(max-width: 768px) 100vw, 
+                                            (max-width: 1200px) 50vw, 
+                                            33vw"
+                                        objectFit='contain'
+                                        alt={project.title}
+                                        src={`/logos/${project.src}`}
+                                    />
+                                </div>
+                                <div className={styles.title}>{project.title}</div>
                             </div>
-                        </div>
+                        );
                     })
                 }
             </motion.div>
@@ -125,18 +152,26 @@ export default function Sliding() {
             <motion.div style={{ x: x3 }} className={styles.slider}>
                 {
                     slider3.map((project, index) => {
-                        return <div key={index} className={styles.project} style={{ backgroundColor: project.color }} >
-                            <div key={index} className={styles.imageContainer}>
-                                <Image
-                                    fill={true}
-                                    objectFit='contain'
-                                    alt={"image"}
-                                    src={`/logos/${project.src}`} />
+                        return (
+                            <div key={index} className={styles.project} style={{ }}>
+                                <div className={styles.imageContainer}>
+                                    <Image
+                                        fill={true}
+                                        sizes="(max-width: 768px) 100vw, 
+                                            (max-width: 1200px) 50vw, 
+                                            33vw"
+                                        objectFit='contain'
+                                        alt={project.title}
+                                        src={`/logos/${project.src}`}
+                                    />
+                                </div>
+                                <div className={styles.title}>{project.title}</div>
                             </div>
-                        </div>
+                        );
                     })
                 }
             </motion.div>
+
             <motion.div style={{ height }} className={styles.circleContainer}>
                 <div className={styles.circle}></div>
             </motion.div>

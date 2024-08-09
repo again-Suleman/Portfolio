@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import Image from 'next/image';
 import Rounded from '../../common/RoundedButton';
+import MagneticEffect from '@/common/Magnetic';
 
 // Data
 export const projects = [
@@ -93,7 +94,7 @@ export default function Home() {
   return (
 
 
-    <main onMouseMove={(e) => { moveItems(e.clientX, e.clientY) }} className={styles.projects}>
+    <main id='projectSection' onMouseMove={(e) => { moveItems(e.clientX, e.clientY) }} className={styles.projects}>
       <h2 className='gradient-text'>Projects</h2>
 
 
@@ -106,9 +107,11 @@ export default function Home() {
           })
         }
       </div>
-      {/* <Rounded>
-        <p>More work</p>
-      </Rounded> */}
+      <MagneticEffect>
+        <button className={styles.more}>More Coming Soon</button>
+      </MagneticEffect>
+      
+
 
       <>
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>

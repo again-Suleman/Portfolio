@@ -5,7 +5,7 @@ import { useInView, motion } from 'framer-motion';
 
 // Componentssssss
 import { slideUp, opacity } from './animation';
-import Rounded from '../../common/RoundedButton/index';
+import MagneticEffect from '@/common/Magnetic';
 
 
 export default function Description() {
@@ -15,9 +15,8 @@ export default function Description() {
     // Checking when the container comes in view lool
     const isInView = useInView(description)
 
-
     return (
-        <div ref={description} className={styles.description}>
+        <div id='descriptionSection' ref={description} className={styles.description}>
             <div className={styles.body}>
                 <p>
                     {
@@ -28,9 +27,14 @@ export default function Description() {
                 </p>
                 <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>Began with a laptop and a cup of tea, now aiming for heights only I can see.</motion.p>
                 <div data-scroll data-scroll-speed={0.1} >
-                    <Rounded backgroundColor='black' className={styles.button} >
-                        <p>About me</p>
-                    </Rounded>
+                    <MagneticEffect>
+                        <button className={styles.button} >
+                            <p>
+                                Fun Fact <br />
+                                About me!
+                            </p>
+                        </button>
+                    </MagneticEffect>
                 </div>
             </div>
         </div>

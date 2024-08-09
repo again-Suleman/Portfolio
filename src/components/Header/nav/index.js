@@ -1,63 +1,74 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import styles from './style.module.scss';
-import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import { Link as ScrollLink } from 'react-scroll'; 
+
+
+import { motion } from 'framer-motion';
 import { menuSlide } from '../animation';
-import Link from './Link/index';
+
+// Components
 import Curve from './Curve/index';
 import Footer from './Footer/index';
 
 const navItems = [
   {
     title: "Home",
-    href: "/",
+    href: "homeSection",  
   },
   {
     title: "Work",
-    href: "/work",
+    href: "projectSection",  
   },
   {
     title: "About",
-    href: "/about",
+    href: "descriptionSection",  
   },
   {
     title: "Contact",
-    href: "/contact",
+    href: "contactSection",  
   },
-]
+];
 
 export default function Nav() {
-
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   return (
-    <motion.div 
-      variants={menuSlide} 
-      initial="initial" 
-      animate="enter" 
-      exit="exit" 
+    <motion.div
+      variants={menuSlide}
+      initial="initial"
+      animate="enter"
+      exit="exit"
       className={styles.menu}
-      >
-       <div className={styles.body}>
-            <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={styles.nav}>
-                    <div className={styles.header}>
-                        <p>Navigation</p>
-                    </div>
-                    {
-                      navItems.map( (data, index) => {
-                        return <Link 
-                        key={index} 
-                        data={{...data, index}} 
-                        isActive={selectedIndicator == data.href} 
-                        setSelectedIndicator={setSelectedIndicator}>
-                        </Link>
-                      })
-                    }
-            </div>
-            <Footer />
+    >
+      <div className={styles.body}>
+        <div onMouseLeave={() => { setSelectedIndicator(pathname); }} className={styles.nav}>
+          <div className={styles.header}>
+            <p>Navigation</p>
+          </div>
+          {
+            navItems.map((data, index) => (
+              <ScrollLink
+                key={index}
+                to={data.href} 
+                smooth={true}
+                duration={900}
+                offset={-50}
+                className={styles.link}
+                onSetActive={() => setSelectedIndicator(data.href)}
+              >
+                <div className={styles.el}>
+                  <a>{data.title}</a>
+                  <div className={styles.indicator}></div>
+                </div>
+              </ScrollLink>
+            ))
+          }
         </div>
-        <Curve />
+        <Footer />
+      </div>
+      <Curve />
     </motion.div>
-  )
+  );
 }
